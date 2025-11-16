@@ -1,12 +1,12 @@
 User-agent: *
-Disallow: /denizcan83/   # GitHub repo'n gizlensin
-Disallow: /mclvakfi_web/ # Eski repo varsa
+Disallow: /denizcan83/
+Disallow: /mclvakfi_web/
+Disallow: /mclvakfi-web/
 
-# Ana siteye izin ver
-User-agent: Yandex
+# Sadece ana siteyi indeksle
 Allow: /
-
-User-agent: Googlebot
-Allow: /
+Allow: /index.html
+Allow: /logo.png
+Allow: /lise-resim.jpg
 
 Sitemap: https://mclvakfi.org.tr/sitemap.xml
