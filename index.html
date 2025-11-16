@@ -7,6 +7,57 @@
   <meta name="description" content="Celikel Lisesi (Mehmet Çelikel Lisesi) Vakfı: Eğitim projeleri, mezun ağı, Zonguldak. 1938'den beri eğitimde fark yaratıyoruz.">
   <meta name="keywords" content="celikel lisesi, mehmet çelikel lisesi, zonguldak lisesi, mcl vakfı, mezunlar, tev-dak, eğitim vakfı">
 
+  <!-- FAVICON (Tarayıcı Sekmesi + Google Arama Küçük Resim) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- OPEN GRAPH (Facebook, LinkedIn, Google) -->
+  <meta property="og:title" content="Mehmet Çelikel Lisesi Vakfı - Celikel Lisesi">
+  <meta property="og:description" content="Celikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak.">
+  <meta property="og:image" content="https://mclvakfi.org.tr/logo.png">
+  <meta property="og:url" content="https://mclvakfi.org.tr">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER CARDS -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@MCLvakfi">
+  <meta name="twitter:title" content="Mehmet Çelikel Lisesi Vakfı">
+  <meta name="twitter:description" content="Celikel Lisesi resmi vakfı">
+  <meta name="twitter:image" content="https://mclvakfi.org.tr/logo.png">
+
+  <!-- SCHEMA.ORG (Google Rich Results - Logo + Adres + İletişim) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Mehmet Çelikel Lisesi Vakfı",
+    "alternateName": "Celikel Lisesi Vakfı",
+    "url": "https://mclvakfi.org.tr",
+    "logo": "https://mclvakfi.org.tr/logo.png",
+    "description": "Zonguldak Mehmet Çelikel Lisesi'nin resmi vakfı. Eğitim projeleri, mezun ağı ve TEVDAK üyesi.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Meşrutiyet Mah. Gazipaşa Cad. 32/1",
+      "addressLocality": "Zonguldak",
+      "postalCode": "67100",
+      "addressCountry": "TR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90-372-252-0052",
+      "contactType": "customer service",
+      "email": "iletisim@mclvakfi.org.tr"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/1AMUmYjMjc/",
+      "https://www.instagram.com/celikellisesivakfi",
+      "https://x.com/MCLvakfi"
+    ]
+  }
+  </script>
+
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -43,7 +94,6 @@
       margin-top: 0;
       margin-bottom: 25px;
     }
-
     /* İletişim Kutusu ve Link Stili */
     .sidebar .info-box {
       border: 1px solid #ccc;
@@ -81,32 +131,31 @@
         margin-bottom: 0;
     }
     /* Küçük ekranlar için düzenleme (Duyarlı Tasarım) */
-   @media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* LOGO + TÜM İÇERİK ORTALANIR */
-  }
-  .sidebar .logo {
-    margin: 0 auto 25px auto; /* ORTALA + ALTA BOŞLUK */
-    max-width: 150px; /* MOBİLDE KÜÇÜLT (İSTERSEN) */
-  }
-  .info-box, .social-icons {
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-  }
-}
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar .logo {
+        margin: 0 auto 25px auto;
+        max-width: 150px;
+      }
+      .info-box, .social-icons {
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="container">
   <div class="content-wrapper">
     <div class="main-content">
-     
       <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
       <div class="section">
         <p>1980’li yılların sonlarına doğru devlet Liselerinin bütçelerinin kısılması süreciyle birlikte, çağdaş eğitim için gerekli altyapı yatırımlarının yeteri derece karşılanamaması üzerine, Çelikel Lisesi (Mehmet Çelikel Lisesi) mezunları okullarına sahip çıkmak için çalışmalara başladı ve 1988 senesinde Mehmet Çelikel Lisesi Vakfı resmen kuruldu.</p>
@@ -117,11 +166,7 @@
       </div>
     </div>
     <div class="sidebar">
-      <img
-        class="logo"
-        alt="MCL Logo"
-        src="logo.png" />
-     
+      <img class="logo" alt="MCL Logo" src="logo.png" />
       <div class="info-box">
         <h2>İletişim Bilgileri</h2>
         <div class="section">
@@ -132,7 +177,6 @@
           <p><strong>E-Mail:</strong> <a href="mailto:iletisim@mclvakfi.org.tr">iletisim@mclvakfi.org.tr</a></p>
         </div>
       </div>
-       
       <div class="section social-icons">
         <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank" title="Facebook">
           <i class="fa-brands fa-facebook"></i>
@@ -145,10 +189,7 @@
         </a>
       </div>
     </div>
-  </div> </div>
+  </div>
+</div>
 </body>
 </html>
-
-
-
-
