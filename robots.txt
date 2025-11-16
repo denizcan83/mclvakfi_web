@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /denizcan83/   # GitHub repo'n gizlensin
+Disallow: /mclvakfi_web/ # Eski repo varsa
+
+# Ana siteye izin ver
+User-agent: Yandex
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://mclvakfi.org.tr/sitemap.xml
