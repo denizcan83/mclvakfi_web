@@ -84,16 +84,24 @@
     .sidebar h2 { margin-top: 0; }
     .info-box a { text-decoration: none; color: inherit; }
     /* SOSYAL MEDYA */
+    .social-icons {
+      display: flex;  /* Flex ile sırala */
+      justify-content: center;  /* Tam ortala (sola yakınlık çözüldü) */
+      gap: 15px;  /* İkonlar arası boşluk */
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
     .social-icons a {
-      font-size: 32px; margin-right: 15px; opacity: 0.8;
-      transition: opacity 0.2s; display: inline-block;
+      font-size: 32px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
     }
     .social-icons a:hover { opacity: 1; }
     .social-icons .fa-facebook { color: #1877F2; }
     .social-icons .fa-instagram { color: #E4405F; }
     .social-icons .fa-x-twitter { color: #000000; }
-    .social-icons .fa-whatsapp { color: #25D366; } /* WhatsApp yeşili */
-    .social-icons { margin-top: 20px; text-align: center; }
+    .social-icons .fa-whatsapp { color: #25D366; }
     /* MOBİL */
     @media (max-width: 768px) {
       .content-wrapper { flex-direction: column; }
