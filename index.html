@@ -108,7 +108,7 @@
     /* SOSYAL MEDYA */
     .social-icons {
       display: flex; 
-      justify-content: center; /* HİZALAMA BURADA ORTAYA ALINDI */
+      justify-content: center; 
       gap: 15px; 
       margin-top: 20px;
       padding: 0; 
@@ -128,29 +128,48 @@
       .content-wrapper { flex-direction: column; }
       
       .column-logo { 
-        order: 2; /* Logoyu tanıtım yazısının altına al */
-        flex: 1; /* Mobil görünümde tam genişlik */
-        align-items: center; /* LOGOYU ORTALAR */
-        padding-top: 0; /* Üstteki boşluğu kaldır */
+        order: 2; 
+        flex: 1; 
+        align-items: center; 
+        padding-top: 0; 
       } 
       .column-content { 
-        order: 1; /* Tanıtım yazısı üste gelir */
+        order: 1; 
         flex: 1; 
       }
       .column-contact { 
-        order: 3; /* İletişim en altta kalır */
+        order: 3; 
         flex: 1; 
+        /* İletişim sütununu ortalamak için Flex kullanılır */
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0; 
       }
       
-      /* column-logo içindeki logo'yu ortalamak için */
+      /* Logo ortalama */
       .column-logo .logo { 
         max-width: 150px; 
-        margin-left: auto; 
-        margin-right: auto; 
+        margin: 0 auto; 
       }
-      .column-contact { padding: 0 10px; } 
-      .info-box { text-align: left; }
-      .column-contact .social-icons { justify-content: center; } 
+
+      /* Kutu ve ikonları ortalar */
+      .column-contact .info-box {
+          width: 90%; 
+          text-align: center; 
+          max-width: 350px; 
+      }
+      .column-contact .social-icons { 
+          justify-content: center; 
+          width: 90%;
+          max-width: 350px; 
+      }
+
+      /* Başlıkları ve metin hizalamasını mobil için ayarla */
+      .column-content h1 { text-align: center; }
+      .column-contact h2 { text-align: center; }
+      .column-content p { text-align: justify; }
+
     }
     
     /* BANNER (LİSE RESMİ) */
