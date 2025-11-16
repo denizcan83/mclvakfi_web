@@ -81,15 +81,25 @@
         margin-bottom: 0;
     }
     /* Küçük ekranlar için düzenleme (Duyarlı Tasarım) */
-    @media (max-width: 768px) {
-      .content-wrapper {
-        flex-direction: column;
-      }
-      .sidebar .logo {
-          margin-left: 0;
-          margin-right: 0;
-      }
-    }
+   @media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* LOGO + TÜM İÇERİK ORTALANIR */
+  }
+  .sidebar .logo {
+    margin: 0 auto 25px auto; /* ORTALA + ALTA BOŞLUK */
+    max-width: 150px; /* MOBİLDE KÜÇÜLT (İSTERSEN) */
+  }
+  .info-box, .social-icons {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+  }
+}
   </style>
 </head>
 <body>
@@ -138,3 +148,4 @@
   </div> </div>
 </body>
 </html>
+
