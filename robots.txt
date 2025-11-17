@@ -3,10 +3,16 @@ Disallow: /denizcan83/
 Disallow: /mclvakfi_web/
 Disallow: /mclvakfi-web/
 
-# Sadece ana siteyi indeksle
+# Ana siteyi ve önemli dosyaları izin ver
 Allow: /
 Allow: /index.html
 Allow: /logo.png
 Allow: /lise-resim.jpg
 
+# FAVICON DOSYALARINI AÇIKÇA İZİN VER (YENİ EKLENEN SATIRLAR)
+Allow: /favicon.ico
+Allow: /favicon-32x32.png
+Allow: /apple-touch-icon.png
+
+# Sitemap (ana domain üzerinden)
 Sitemap: https://mclvakfi.org.tr/sitemap.xml
