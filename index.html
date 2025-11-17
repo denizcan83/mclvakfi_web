@@ -55,63 +55,46 @@
     referrerpolicy="no-referrer" />
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
-    .container { max-width: 1100px; margin: auto; } 
+    .container { max-width: 1100px; margin: auto; }
     h1 { font-size: 28px; margin-bottom: 20px; margin-top: 0; }
     h2 { margin-top: 30px; }
     .section { margin-bottom: 25px; }
-
     /* ÜÇ SÜTUNLU DÜZEN */
     .content-wrapper {
       display: flex;
-      gap: 30px; /* Sütunlar arası boşluk */
+      gap: 30px;
       margin-top: 0;
-      align-items: flex-start; 
+      align-items: flex-start;
     }
-    
-    /* YENİ FLEX KURALLARI */
-    .column-logo { 
-      /* Sabit ve dar (Logo boyutu kadar) */
-      flex: 0 0 180px; 
-      min-width: 0;
-    }
-    .column-contact { 
-      /* Sabit ve genişletilmiş (İletişim sığması için) */
-      flex: 0 0 220px; 
-      min-width: 0;
-    }
-    .column-content {
-      /* Kalan alanı doldur */
-      flex: 1; 
-      min-width: 0;
-    }
+   
+    .column-logo { flex: 0 0 180px; min-width: 0; }
+    .column-contact { flex: 0 0 220px; min-width: 0; }
+    .column-content { flex: 1; min-width: 0; }
 
-    /* LOGO (column-logo) */
     .column-logo {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Logoyu sola hizalar */
-      padding-top: 10px; 
+      align-items: flex-start;
+      padding-top: 10px;
     }
-    .column-logo .logo { 
+    .column-logo .logo {
       width: 100%; max-width: 180px; height: auto;
-      margin: 0; 
+      margin: 0;
       margin-bottom: 25px;
     }
 
-    /* İLETİŞİM KUTUSU (column-contact) */
-    .column-contact .info-box { 
+    .column-contact .info-box {
       border: 1px solid #ccc; padding: 15px; border-radius: 8px;
     }
     .column-contact h2 { margin-top: 0; }
     .info-box a { text-decoration: none; color: inherit; }
-    
-    /* SOSYAL MEDYA */
+   
     .social-icons {
-      display: flex; 
-      justify-content: center; 
-      gap: 15px; 
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       margin-top: 20px;
-      padding: 0; 
+      padding: 0;
       list-style: none;
     }
     .social-icons a {
@@ -122,63 +105,54 @@
     .social-icons .fa-instagram { color: #E4405F; }
     .social-icons .fa-x-twitter { color: #000000; }
     .social-icons .fa-whatsapp { color: #25D366; }
-    
-    /* MOBİL (768px altında alt alta sırala) */
+   
+    /* MOBİL DÜZEN */
     @media (max-width: 768px) {
       .content-wrapper { flex-direction: column; }
-      
-      .column-logo { 
-        order: 2; 
-        flex: 1; 
-        align-items: center !important;
-
-        padding-top: 0; 
-      } 
-      .column-content { 
-        order: 1; 
-        flex: 1; 
+     
+      .column-logo {
+        order: 2;
+        flex: 1;
+        align-items: center !important;   /* <<< BURADA ZATEN VAR */
+        padding-top: 0;
       }
-      .column-contact { 
-        order: 3; 
-        flex: 1; 
-        /* İletişim sütununu ortalamak için Flex kullanılır */
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        padding: 0; 
+      .column-content { order: 1; flex: 1; }
+      .column-contact { order: 3; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0; }
+     
+      .column-logo .logo {
+        max-width: 150px;
+        margin: 0 auto 25px auto;   /* <<< MOBİLDE ORTALAMA İÇİN EKLENDİ */
+        display: block;
       }
-      
-      /* Logo ortalama */
-      .column-logo .logo { 
-        max-width: 150px; 
-        margin: 0 auto; 
-      }
-
-      /* Kutu ve ikonları ortalar */
-      .column-contact .info-box {
-          width: 90%; 
-          text-align: center; 
-          max-width: 350px; 
-      }
-      .column-contact .social-icons { 
-          justify-content: center; 
+     
+      .column-contact .info-box,
+      .column-contact .social-icons {
           width: 90%;
-          max-width: 350px; 
+          max-width: 350px;
+          text-align: center;
       }
-
-      /* Başlıkları ve metin hizalamasını mobil için ayarla */
       .column-content h1 { text-align: center; }
       .column-contact h2 { text-align: center; }
       .column-content p { text-align: justify; }
-
     }
-    
-    /* BANNER (LİSE RESMİ) */
+   
+    /* === YENİ EKlenen KESİN MOBİL LOGO ORTALAMA DÜZELTMESİ === */
+    @media (max-width: 768px) {
+      .column-logo {
+        align-items: center !important;
+        text-align: center;
+      }
+      .column-logo .logo {
+        margin: 0 auto 25px auto !important;  /* Kesin ortalama */
+      }
+    }
+    /* ======================================================= */
+
     .hero-banner {
-      position: relative; 
-      width: 100%; 
-      max-width: 1100px; 
-      margin: 0 auto 40px auto; 
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 40px auto;
       overflow: hidden;
     }
     .banner-image {
@@ -189,12 +163,8 @@
       text-align: center; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.7);
       width: 90%; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 10px;
     }
-    .banner-overlay h1 {
-      font-size: 36px; margin: 0 0 10px 0; font-weight: bold;
-    }
-    .banner-overlay p {
-      font-size: 20px; margin: 0; font-style: italic;
-    }
+    .banner-overlay h1 { font-size: 36px; margin: 0 0 10px 0; font-weight: bold; }
+    .banner-overlay p { font-size: 20px; margin: 0; font-style: italic; }
     @media (max-width: 768px) {
       .banner-overlay h1 { font-size: 28px; }
       .banner-overlay p { font-size: 16px; }
@@ -202,12 +172,12 @@
     }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LL2KGG93C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8LL2KGG93C');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8LL2KGG93C');
+  </script>
 </head>
 <body>
   <div class="hero-banner">
@@ -216,15 +186,12 @@
       <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
     </div>
   </div>
-  
+ 
   <div class="container">
-    
     <div class="content-wrapper">
-      
       <div class="column-logo">
         <img class="logo" alt="MCL Logo" src="logo.png" />
       </div>
-
       <div class="column-content">
         <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
         <div class="section">
@@ -235,7 +202,7 @@
           <p>Mehmet Çelikel Lisesi Vakfı’nın 33 Mütevelli Heyeti Üyesi bulunmaktadır.</p>
         </div>
       </div>
-      
+     
       <div class="column-contact">
         <div class="info-box">
           <h2>İletişim Bilgileri</h2>
@@ -251,7 +218,7 @@
             </p>
           </div>
         </div>
-        
+       
         <div class="section social-icons">
           <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
@@ -267,9 +234,7 @@
           </a>
         </div>
       </div>
-      
     </div>
   </div>
 </body>
 </html>
-
