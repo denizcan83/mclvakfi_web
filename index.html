@@ -66,15 +66,14 @@
       margin-top: 0;
       align-items: flex-start;
     }
-   
+  
     .column-logo { flex: 0 0 180px; min-width: 0; }
     .column-contact { flex: 0 0 220px; min-width: 0; }
     .column-content { flex: 1; min-width: 0; }
-
     .column-logo {
-      display: flex;
+      display: flex !important;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-start !important;
       padding-top: 10px;
     }
     .column-logo .logo {
@@ -82,13 +81,12 @@
       margin: 0;
       margin-bottom: 25px;
     }
-
     .column-contact .info-box {
       border: 1px solid #ccc; padding: 15px; border-radius: 8px;
     }
     .column-contact h2 { margin-top: 0; }
     .info-box a { text-decoration: none; color: inherit; }
-   
+  
     .social-icons {
       display: flex;
       justify-content: center;
@@ -105,49 +103,8 @@
     .social-icons .fa-instagram { color: #E4405F; }
     .social-icons .fa-x-twitter { color: #000000; }
     .social-icons .fa-whatsapp { color: #25D366; }
-   
-    /* MOBİL DÜZEN */
-    @media (max-width: 768px) {
-      .content-wrapper { flex-direction: column; }
-     
-      .column-logo {
-        order: 2;
-        flex: 1;
-        align-items: center !important;   /* <<< BURADA ZATEN VAR */
-        padding-top: 0;
-      }
-      .column-content { order: 1; flex: 1; }
-      .column-contact { order: 3; flex: 1; display: flex; flex-direction: column; align-items: center; padding: 0; }
-     
-      .column-logo .logo {
-        max-width: 150px;
-        margin: 0 auto 25px auto;   /* <<< MOBİLDE ORTALAMA İÇİN EKLENDİ */
-        display: block;
-      }
-     
-      .column-contact .info-box,
-      .column-contact .social-icons {
-          width: 90%;
-          max-width: 350px;
-          text-align: center;
-      }
-      .column-content h1 { text-align: center; }
-      .column-contact h2 { text-align: center; }
-      .column-content p { text-align: justify; }
-    }
-   
-    /* === YENİ EKlenen KESİN MOBİL LOGO ORTALAMA DÜZELTMESİ === */
-    @media (max-width: 768px) {
-      .column-logo {
-        align-items: center !important;
-        text-align: center;
-      }
-      .column-logo .logo {
-        margin: 0 auto 25px auto !important;  /* Kesin ortalama */
-      }
-    }
-    /* ======================================================= */
-
+  
+    /* BANNER */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -165,7 +122,52 @@
     }
     .banner-overlay h1 { font-size: 36px; margin: 0 0 10px 0; font-weight: bold; }
     .banner-overlay p { font-size: 20px; margin: 0; font-style: italic; }
+  
+    /* MOBİL DÜZEN - TEK VE GÜÇLÜ MEDIA QUERY */
     @media (max-width: 768px) {
+      body { margin: 20px; }
+      .content-wrapper { 
+        flex-direction: column !important; 
+        gap: 20px;
+      }
+      .column-logo {
+        order: 2 !important;
+        flex: 1 !important;
+        align-items: center !important;  /* Logo sütununu ortala */
+        justify-content: center !important;
+        text-align: center !important;
+        padding-top: 0 !important;
+        width: 100% !important;
+      }
+      .column-content { 
+        order: 1 !important; 
+        flex: 1 !important;
+        text-align: center;
+      }
+      .column-contact { 
+        order: 3 !important; 
+        flex: 1 !important; 
+        display: flex !important; 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      .column-logo .logo {
+        max-width: 150px !important;
+        margin: 0 auto !important;  /* Kesin ortalama - auto her iki tarafta */
+        display: block !important;
+        float: none !important;
+      }
+      .column-contact .info-box,
+      .column-contact .social-icons {
+        width: 90% !important;
+        max-width: 350px !important;
+        text-align: center !important;
+      }
+      .column-content h1 { text-align: center !important; }
+      .column-contact h2 { text-align: center !important; }
+      .column-content p { text-align: justify; }
       .banner-overlay h1 { font-size: 28px; }
       .banner-overlay p { font-size: 16px; }
       .banner-image { max-height: 300px; }
@@ -186,7 +188,6 @@
       <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
     </div>
   </div>
- 
   <div class="container">
     <div class="content-wrapper">
       <div class="column-logo">
@@ -202,7 +203,7 @@
           <p>Mehmet Çelikel Lisesi Vakfı’nın 33 Mütevelli Heyeti Üyesi bulunmaktadır.</p>
         </div>
       </div>
-     
+    
       <div class="column-contact">
         <div class="info-box">
           <h2>İletişim Bilgileri</h2>
@@ -218,7 +219,7 @@
             </p>
           </div>
         </div>
-       
+      
         <div class="section social-icons">
           <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
