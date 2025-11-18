@@ -6,9 +6,11 @@
   <title>Mehmet Çelikel Lisesi Vakfı Resmi Sitesi</title>
   <meta name="description" content="Celikel Lisesi (Mehmet Çelikel Lisesi) Vakfı: Eğitim projeleri, mezun ağı, Zonguldak. 1938'den beri eğitimde fark yaratıyoruz.">
   <meta name="keywords" content="celikel lisesi, mehmet çelikel lisesi, zonguldak lisesi, mcl vakfı, mezunlar, tev-dak, eğitim vakfı">
+  
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
   <meta property="og:title" content="Mehmet Çelikel Lisesi Vakfı - Celikel Lisesi">
   <meta property="og:description" content="Celikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak.">
   <meta property="og:image" content="https://mclvakfi.org.tr/logo.png">
@@ -19,6 +21,7 @@
   <meta name="twitter:title" content="Mehmet Çelikel Lisesi Vakfı">
   <meta name="twitter:description" content="Celikel Lisesi resmi vakfı">
   <meta name="twitter:image" content="https://mclvakfi.org.tr/logo.png">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,134 +51,243 @@
     ]
   }
   </script>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
-    .container { max-width: 1100px; margin: auto; }
-    h1 { font-size: 28px; margin-bottom: 20px; margin-top: 0; }
-    h2 { margin-top: 30px; }
-    .section { margin-bottom: 25px; }
-    /* ÜÇ SÜTUNLU DÜZEN */
-    .content-wrapper {
-      display: flex;
-      gap: 30px;
-      margin-top: 0;
-      align-items: flex-start;
+    /* GENEL AYARLAR */
+    :root {
+      --primary-color: #2c3e50; /* Lacivert */
+      --accent-color: #c0392b;  /* Vurgu Rengi */
+      --bg-light: #f8f9fa;
+      --text-dark: #333;
     }
 
-    .column-logo { flex: 0 0 180px; min-width: 0; }
-    .column-contact { flex: 0 0 320px; min-width: 0; }
-    .column-content { flex: 1; min-width: 0; }
-    .column-logo {
-      display: flex !important;
-      flex-direction: column;
-      align-items: flex-start !important;
-      padding-top: 10px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Navbar yüksekliği kadar boşluk */
     }
-    .column-logo .logo {
-      width: 100%; max-width: 180px; height: auto;
+
+    body { 
+      font-family: 'Open Sans', sans-serif; 
+      line-height: 1.7; 
       margin: 0;
-      margin-bottom: 25px;
+      color: var(--text-dark);
+      background-color: #fff;
     }
-    .column-contact .info-box {
-      border: 1px solid #ccc; padding: 15px; border-radius: 8px;
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    a:hover { color: var(--primary-color); }
+
+    /* NAVBAR (MENÜ) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 0 20px;
     }
-    .column-contact h2 { margin-top: 0; }
-    .info-box a { text-decoration: none; color: inherit; }
-
-    .contact-extra h3 { margin: 10px 0 6px; }
-    .contact-extra p { margin: 0 0 12px; }
-
-    .social-icons {
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-      padding: 0;
-      list-style: none;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
     }
-    .social-icons a {
-      font-size: 32px; opacity: 0.8; transition: opacity 0.2s;
+    .nav-brand {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary-color);
     }
-    .social-icons a:hover { opacity: 1; }
-    .social-icons .fa-facebook { color: #1877F2; }
-    .social-icons .fa-instagram { color: #E4405F; }
-    .social-icons .fa-x-twitter { color: #000000; }
-    .social-icons .fa-whatsapp { color: #25D366; }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
 
+    /* DÜZEN (LAYOUT) */
+    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+    
     /* BANNER */
     .hero-banner {
       position: relative;
       width: 100%;
-      max-width: 1100px;
-      margin: 0 auto 40px auto;
-      overflow: hidden;
+      height: 400px;
+      margin-top: 70px; /* Navbar payı */
+      margin-bottom: 40px;
+      background-color: #eee;
     }
     .banner-image {
-      width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block;
     }
     .banner-overlay {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      text-align: center; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-      width: 90%; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 10px;
+      position: absolute; 
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* Karanlık katman */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
-    .banner-overlay h1 { font-size: 36px; margin: 0 0 10px 0; font-weight: bold; }
-    .banner-overlay p { font-size: 20px; margin: 0; font-style: italic; }
+    .banner-overlay h1 { 
+      font-size: 38px; 
+      color: white; 
+      margin: 0; 
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
 
-    /* MOBİL DÜZEN - TEK VE GÜÇLÜ MEDIA QUERY */
-    @media (max-width: 768px) {
-      body { margin: 20px; }
+    /* İÇERİK ALANI */
+    .content-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    /* 1. SOL SÜTUN (LOGO) */
+    .column-logo { 
+      flex: 0 0 180px; 
+      text-align: center;
+      position: sticky; /* Logo yukarıda kalsın */
+      top: 100px;
+    }
+    .column-logo .logo { 
+      width: 100%; 
+      max-width: 160px; 
+      height: auto; 
+    }
+
+    /* 2. ORTA SÜTUN (METİN) */
+    .column-content { flex: 1; }
+    .section-title { 
+      color: var(--primary-color); 
+      border-bottom: 2px solid #eee; 
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    .text-justify { text-align: justify; }
+    
+    /* LİSTELER */
+    .list-box ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* İki sütunlu liste */
+      gap: 10px;
+    }
+    .list-box li {
+      background: #f9f9f9;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      border-left: 3px solid #ddd;
+    }
+    .list-box li:hover { border-left-color: var(--primary-color); }
+
+    /* 3. SAĞ SÜTUN (İLETİŞİM) */
+    .column-contact { flex: 0 0 300px; }
+    
+    .contact-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .contact-card h2 { font-size: 20px; color: var(--primary-color); margin-top: 0; }
+    .contact-item { margin-bottom: 12px; font-size: 14px; }
+    .contact-item strong { display: block; color: #555; }
+    
+    /* BANKA HESAPLARI */
+    .bank-box {
+      background-color: #f0f4f8;
+      border-left: 4px solid var(--primary-color);
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 0 8px 8px 0;
+    }
+    .bank-box h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: var(--primary-color);
+    }
+    .bank-details p { margin: 0 0 10px 0; font-size: 13px; color: #444; }
+    .iban { font-family: monospace; font-weight: 600; color: #000; }
+
+    /* SOSYAL MEDYA */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .social-icons a {
+      font-size: 24px;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: #f5f5f5;
+      transition: 0.3s;
+    }
+    .social-icons a:hover { background: var(--primary-color); color: white; }
+    .fa-facebook { color: #1877F2; }
+    .fa-instagram { color: #E4405F; }
+    .fa-x-twitter { color: #000000; }
+    .fa-whatsapp { color: #25D366; }
+    .social-icons a:hover i { color: white; }
+
+    /* MOBİL UYUMLULUK (RESPONSIVE) */
+    @media (max-width: 900px) {
+      .nav-links { display: none; } /* Mobilde basitlik için linkleri gizle veya hamburger ekle */
+      .nav-brand { font-size: 16px; }
+      
       .content-wrapper {
-        flex-direction: column !important;
-        gap: 20px;
+        flex-direction: column;
+        gap: 30px;
       }
-      .column-logo {
-        order: 2 !important;
-        flex: 1 !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding-top: 0 !important;
-        width: 100% !important;
+      
+      /* Mobilde sıralama: Logo -> İçerik -> İletişim */
+      .column-logo { 
+        position: static; 
+        width: 100%; 
+        margin-bottom: 10px;
       }
-      .column-content {
-        order: 1 !important;
-        flex: 1 !important;
-        text-align: center;
+      
+      .column-content { width: 100%; }
+      
+      .column-contact { 
+        width: 100%; 
+        flex: auto; 
       }
-      .column-contact {
-        order: 3 !important;
-        flex: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 0 !important;
-        width: 100% !important;
-      }
-      .column-logo .logo {
-        max-width: 150px !important;
-        margin: 0 auto !important;
-        display: block !important;
-        float: none !important;
-      }
-      .column-contact .info-box,
-      .column-contact .social-icons {
-        width: 90% !important;
-        max-width: 350px !important;
-        text-align: center !important;
-      }
-      .column-content h1 { text-align: center !important; }
-      .column-contact h2 { text-align: center !important; }
-      .column-content p { text-align: justify; }
-      .banner-overlay h1 { font-size: 28px; }
-      .banner-overlay p { font-size: 16px; }
-      .banner-image { max-height: 300px; }
+
+      .list-box ul { grid-template-columns: 1fr; } /* Mobilde tek sütun liste */
+      
+      .banner-overlay h1 { font-size: 24px; }
+      .hero-banner { height: 250px; }
+      
+      /* Mobilde banka kartları daha belirgin olsun */
+      .bank-box { border-left-width: 6px; }
     }
   </style>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LL2KGG93C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -185,6 +297,18 @@
   </script>
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">MCL VAKFI</a>
+      <div class="nav-links">
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#yonetim">Yönetim</a>
+        <a href="#iletisim">İletişim & Bağış</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="hero-banner">
     <img src="lise-resim.jpg" alt="Mehmet Çelikel Lisesi - Zonguldak" class="banner-image">
     <div class="banner-overlay">
@@ -195,87 +319,58 @@
   <div class="container">
     <div class="content-wrapper">
 
-      <!-- LOGO SÜTUNU -->
       <div class="column-logo">
         <img class="logo" alt="MCL Logo" src="logo.png" />
       </div>
 
-      <!-- ANA İÇERİK -->
       <div class="column-content">
-        <div class="section">
-          <h2 class="section-title">Mehmet Çelikel Lisesi Vakfı</h2>
+        
+        <div class="section" id="hakkimizda">
+          <h2 class="section-title">Vakfımız Hakkında</h2>
+          <div class="text-justify">
+            <p>
+              Mehmet Çelikel Lisesi, her zaman şükran, minnet ve rahmetle anılan Mehmet ÇELİKEL tarafından
+              1938 yılında yaptırılarak, Cumhuriyetin ilk bağış okulu unvanıyla uzun yıllar Zonguldak ve
+              ilçelerinin tek lisesi olarak binlerce nitelikli gence yuva olmuştur.
+            </p>
+            <p>
+              1988 yılında kurulan vakıf, mezunlarından aldığı güçle Cumhuriyet ve Atatürk ilkelerine bağlı, 
+              çağdaş, akılcı, yenilikçi gençlerin yetişmesi için projeler sunmaktadır.
+            </p>
+            <p>
+              M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü’nde öğrencilerini
+              bir araya getirerek birlik, beraberlik, aidiyet ve sosyal dayanışmayı güçlendirmektedir.
+            </p>
+            <p>
+               TEVDAK (Türk Eğitim Vakıfları Dayanışma Konseyi) üyesi olarak yaratıcı çözümler, 
+               projeler ve eğitim modelleri üretmeye devam etmektedir.
+            </p>
+          </div>
 
-          <p>
-            Mehmet Çelikel Lisesi, her zaman şükran, minnet ve rahmetle anılan Mehmet ÇELİKEL tarafından
-            1938 yılında yaptırılarak, Cumhuriyetin ilk bağış okulu unvanıyla uzun yıllar Zonguldak ve
-            ilçelerinin tek lisesi olarak binlerce nitelikli gence yuva olmuştur.
-          </p>
+          <h3>Misyon & Vizyon</h3>
+          <p><strong>Misyon:</strong> Çağdaş, akılcı ve yenilikçi gençlerin yetişmesini sağlamak.</p>
+          <p><strong>Vizyon:</strong> Eğitimde kalite ve başarıları ile fark yaratan seçkin bir kurum olmak.</p>
+        </div>
 
-          <p>
-            1988 yılında bir grup öğretmen ve öğrencinin bir araya gelerek, tarihi ile onur duydukları
-            okullarına karşı gösterdikleri vefa sonucu kurulan vakıf, mezunlarından aldığı güçle
-            Cumhuriyet ve Atatürk ilkelerine bağlı, çağdaş, akılcı, yenilikçi gençlerin yetişmesi için
-            projeler sunmakta; yeni, yaratıcı program ve yaklaşımlarla fark yaratan seçkin bir kurum
-            yaratma yönünde çalışmalar yapmaktadır.
-          </p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
 
-          <p>
-            M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü’nde öğrencilerini,
-            mezuniyetlerinin 30. ve 50. yıllarında bir araya getirerek birlik, beraberlik, aidiyet ve
-            sosyal dayanışmayı güçlendirmekte ve onları plaketle onurlandırmaktadır.
-          </p>
-
-          <p>
-            Vakıf, Mehmet Çelikel Lisesi’nde eğitimin kalitesinin artırılması için okulun fiziki
-            yapısının iyileştirilmesi, bilimsel, sanatsal, kültürel ve sportif faaliyetlerin daha ileri
-            seviyelere taşınması amacıyla öğretmen ve öğrencilere çeşitli destekler sağlayarak projeler
-            geliştirmektedir.
-          </p>
-
-          <p>
-            Mezun Çelikellilerin katkılarıyla lise ve üniversitede okuyan ihtiyaç sahibi öğrencilere burs
-            desteği sağlanmaktadır.
-          </p>
-
-          <p>
-            Mehmet Çelikel Lisesi Vakfı, tarihi, kurumsal kültürü ve gelenekleri güçlü; mezunlarıyla
-            ülkemizin çeşitli alanlarında etkili olan İstanbul, Ankara, İzmir, Zonguldak, Edirne ve
-            Erzurum’daki 17 tarihi devlet lisesi vakfının bir arada olduğu TEVDAK (Türk Eğitim Vakıfları
-            Dayanışma Konseyi) üyesi olarak yaratıcı çözümler, projeler ve eğitim modelleri üretmeye
-            devam etmektedir.
-          </p>
-
-          <h3>Misyon</h3>
-          <p>
-            Mezunlarından aldığı güçle Türkiye’nin hedeflerine katkı sağlayan, Cumhuriyet ve Atatürk
-            ilkelerine bağlı; çağdaş, akılcı ve yenilikçi gençlerin yetişmesini sağlamak için projeler
-            sunmak ve kaliteli eğitimin verilmesini desteklemektir.
-          </p>
-
-          <h3>Vizyon</h3>
-          <p>
-            Yeni, yaratıcı program ve yaklaşımlarla eğitimde kalite ve başarıları ile fark yaratan seçkin
-            bir kurum olmaktır.
-          </p>
-
-          <hr>
-
-          <h2>Yönetim Kurulu</h2>
+        <div class="section list-box" id="yonetim">
+          <h2 class="section-title">Yönetim Kurulu</h2>
           <ul>
-            <li>Erkal Ünal – Başkan</li>
-            <li>Mücella Pamay – Başkan Yardımcısı</li>
-            <li>Esra Hacıoğlu – Genel Sekreter</li>
+            <li><strong>Erkal Ünal</strong> – Başkan</li>
+            <li><strong>Mücella Pamay</strong> – Başkan Yrd.</li>
+            <li><strong>Esra Hacıoğlu</strong> – Genel Sekreter</li>
             <li>Ömer Gülay – Üye</li>
             <li>Bahattin Zilan – Üye</li>
             <li>Necati Demirci – Üye</li>
             <li>Muammer Yazıcı – Üye</li>
           </ul>
 
-          <h2>Mütevelli Heyeti</h2>
-          <ul>
-            <li>Yüksel Aytaç – Başkan</li>
-            <li>Ali Osman Odabaşı – Başkan Yardımcısı</li>
-            <li>Hamdi Günvar – Başkan Yardımcısı</li>
+          <h2 class="section-title" style="margin-top:30px;">Mütevelli Heyeti</h2>
+          <ul style="max-height: 300px; overflow-y: auto;">
+            <li><strong>Yüksel Aytaç</strong> – Başkan</li>
+            <li>Ali Osman Odabaşı – Bşk. Yrd.</li>
+            <li>Hamdi Günvar – Bşk. Yrd.</li>
             <li>Erkal Ünal</li>
             <li>Mücella Pamay</li>
             <li>Esra Hacıoğlu</li>
@@ -303,72 +398,64 @@
             <li>Ali Osman Haberal</li>
             <li>Şule Tahmaz</li>
             <li>Venüs Kıranğ</li>
-            <li>İsmail Aşkar – Okul Müdürü (Doğal Üye)</li>
-            <li>Aycan Marangoz – Okul Aile Birliği Başkanı (Doğal Üye)</li>
+            <li>İsmail Aşkar (Okul Müdürü)</li>
+            <li>Aycan Marangoz (Okul Aile B.)</li>
           </ul>
 
-          <h2>Denetleme Kurulu</h2>
+          <h2 class="section-title" style="margin-top:30px;">Denetleme Kurulu</h2>
           <ul>
             <li>Şükür Kargıdan</li>
             <li>Tekin Gürkan</li>
             <li>Kamuran Kuşhan</li>
           </ul>
-
         </div>
+
       </div>
 
-      <!-- İLETİŞİM SÜTUNU -->
-      <div class="column-contact">
-        <div class="info-box">
-          <h2>İletişim Bilgileri</h2>
-          <div class="section">
-            <p><strong>Adres:</strong> Mehmet Çelikel Lisesi Vakfi Meşrutiyet Mah. Gazipaşa Cad. 32/1 67100 Zonguldak</p>
-            <p><strong>Web:</strong> <a href="https://mclvakfi.org.tr" target="_blank">https://mclvakfi.org.tr</a></p>
-            <p><strong>Tel:</strong> <a href="tel:03722520052">0372 252 00 52</a> / <a href="tel:05304993444">0530 499 34 44</a></p>
-            <p><strong>Fax:</strong> 0372 253 88 79</p>
-            <p><strong>E-Mail:</strong> <a href="mailto:iletisim@mclvakfi.org.tr">iletisim@mclvakfi.org.tr</a></p>
+      <div class="column-contact" id="iletisim">
+        <div class="contact-card">
+          <h2>İletişim</h2>
+          <div class="contact-item">
+            <strong>Adres:</strong>
+            Meşrutiyet Mah. Gazipaşa Cad. 32/1<br>67100 Zonguldak
+          </div>
+          <div class="contact-item">
+             <strong>Telefon:</strong>
+             <a href="tel:03722520052">0372 252 00 52</a><br>
+             <a href="tel:05304993444">0530 499 34 44</a>
+          </div>
+          <div class="contact-item">
+            <strong>E-Mail:</strong>
+            <a href="mailto:iletisim@mclvakfi.org.tr">iletisim@mclvakfi.org.tr</a>
+          </div>
 
-            <!-- BANKA HESAPLARI: e-posta satırının hemen altında -->
-            <div class="contact-extra">
-              <h3>Burs ve Bağış Hesabı</h3>
-              <p>
-                <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
-                <strong>T. İş Bankası Gazipaşa Şubesi</strong><br>
-                <strong>Hesap No:</strong> 7603 560209<br>
-                <strong>IBAN:</strong> TR93 0006 4000 0017 6030 5602 09
-              </p>
-
-              <h3>Pilav Günü ve Etkinliklere Katılım Hesabı</h3>
-              <p>
-                <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
-                <strong>Garanti Bankası</strong><br>
-                <strong>Hesap No:</strong> 174/6299526<br>
-                <strong>IBAN:</strong> TR21 0006 2000 1740 0006 2995 26
-              </p>
+          <div class="bank-box">
+            <h3>Burs ve Bağış Hesabı</h3>
+            <div class="bank-details">
+              <p>İş Bankası Gazipaşa Şb.</p>
+              <span class="iban">TR93 0006 4000 0017 6030 5602 09</span>
             </div>
-            <!-- /contact-extra -->
+          </div>
 
+          <div class="bank-box">
+            <h3>Etkinlik Hesabı</h3>
+            <div class="bank-details">
+              <p>Garanti Bankası</p>
+              <span class="iban">TR21 0006 2000 1740 0006 2995 26</span>
+            </div>
+          </div>
+
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/celikellisesivakfi?igsh=aWUzc3gwMnIxbmU2" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/MCLvakfi?t=UsDxii03RyJI0WPAhf9mTg&s=08" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/905304993444" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
-
-        <div class="section social-icons">
-          <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank" title="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="https://www.instagram.com/celikellisesivakfi?igsh=aWUzc3gwMnIxbmU2" target="_blank" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://x.com/MCLvakfi?t=UsDxii03RyJI0WPAhf9mTg&s=08" target="_blank" title="X (Twitter)">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="https://wa.me/905304993444" target="_blank" title="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
-
       </div>
+
     </div>
   </div>
+
 </body>
 </html>
-
