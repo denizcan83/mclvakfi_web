@@ -92,7 +92,7 @@
       box-sizing: border-box;
     }
     .nav-container {
-      max-width: 1100px;
+      max-width: 1150px; /* İletişim kutusu büyüdüğü için container'ı biraz genişlettik */
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -119,13 +119,13 @@
     }
 
     /* DÜZEN (LAYOUT) */
-    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+    .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER (KÜÇÜK BOYUTLU - GÜNCELLENDİ) */
+    /* BANNER (KÜÇÜK BOYUTLU) */
     .hero-banner {
       position: relative;
       width: 100%;
-      height: 280px; /* İDEAL MASAÜSTÜ YÜKSEKLİĞİ */
+      height: 280px; 
       margin-top: 70px; /* Navbar payı */
       margin-bottom: 30px;
       background-color: #eee;
@@ -169,11 +169,15 @@
       text-align: center;
       position: sticky; 
       top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* İki logo arası boşluk */
     }
     .column-logo .logo { 
       width: 100%; 
       max-width: 160px; 
       height: auto; 
+      margin: 0 auto;
     }
 
     /* 2. ORTA SÜTUN (METİN) */
@@ -203,8 +207,10 @@
     }
     .list-box li:hover { border-left-color: var(--primary-color); }
 
-    /* 3. SAĞ SÜTUN (İLETİŞİM) */
-    .column-contact { flex: 0 0 300px; }
+    /* 3. SAĞ SÜTUN (İLETİŞİM) - GENİŞLETİLDİ */
+    .column-contact { 
+        flex: 0 0 350px; /* IBAN'lar sığsın diye 300'den 350'ye çıkardık */
+    }
     
     .contact-card {
       background: white;
@@ -231,8 +237,9 @@
       margin: 0 0 8px 0;
       color: var(--primary-color);
     }
-    .bank-details p { margin: 0 0 10px 0; font-size: 13px; color: #444; }
-    .iban { font-family: monospace; font-weight: 600; color: #000; }
+    .bank-details p { margin: 0 0 5px 0; font-size: 13px; color: #444; }
+    .account-name { font-style: italic; margin-bottom: 8px !important; display: block; }
+    .iban { font-family: monospace; font-weight: 600; color: #000; white-space: nowrap; font-size: 12px; }
 
     /* SOSYAL MEDYA */
     .social-icons {
@@ -257,7 +264,7 @@
     .social-icons a:hover i { color: white; }
 
     /* MOBİL UYUMLULUK (RESPONSIVE) */
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) { /* Tablet ve Mobil */
       .nav-links { display: none; } 
       .nav-brand { font-size: 16px; }
       
@@ -278,10 +285,19 @@
         position: static; 
         width: 100%; 
         margin-bottom: 10px;
+        flex-direction: row; /* Mobilde logolar yan yana dursun */
+        justify-content: center;
+        align-items: center;
+      }
+      .column-logo .logo {
+        max-width: 120px; /* Mobilde biraz küçültelim */
       }
       
       .column-content { width: 100%; }
       .column-contact { width: 100%; flex: auto; }
+      
+      /* Mobilde IBAN taşarsa küçült */
+      .iban { font-size: 11px; white-space: normal; word-break: break-all; }
 
       .list-box ul { grid-template-columns: 1fr; } 
       .bank-box { border-left-width: 6px; }
@@ -300,7 +316,7 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-brand">MCL VAKFI</a>
+      <a href="#" class="nav-brand">MÇL VAKFI</a>
       <div class="nav-links">
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#yonetim">Yönetim</a>
@@ -321,6 +337,7 @@
 
       <div class="column-logo">
         <img class="logo" alt="MCL Logo" src="logo.png" />
+        <img class="logo" alt="MCL Logo 2" src="logo2.png" />
       </div>
 
       <div class="column-content">
@@ -399,7 +416,7 @@
             <li>Şule Tahmaz</li>
             <li>Venüs Kıranğ</li>
             <li>İsmail Aşkar (Okul Müdürü)</li>
-            <li>Aycan Marangoz (Okul Aile B.)</li>
+            <li>Aycan Marangoz (Okul Aile B. Bşk.)</li>
           </ul>
 
           <h2 class="section-title" style="margin-top:30px;">Denetleme Kurulu</h2>
@@ -432,15 +449,17 @@
           <div class="bank-box">
             <h3>Burs ve Bağış Hesabı</h3>
             <div class="bank-details">
-              <p>İş Bankası Gazipaşa Şb.</p>
+              <p><strong>İş Bankası Gazipaşa Şb.</strong></p>
+              <p class="account-name">Hesap Adı: Mehmet Çelikel Lisesi Vakfı</p>
               <span class="iban">TR93 0006 4000 0017 6030 5602 09</span>
             </div>
           </div>
 
           <div class="bank-box">
-            <h3>Etkinlik Hesabı</h3>
+            <h3>Pilav Günü & Etkinlik Hesabı</h3>
             <div class="bank-details">
-              <p>Garanti Bankası</p>
+              <p><strong>Garanti Bankası</strong></p>
+              <p class="account-name">Hesap Adı: Mehmet Çelikel Lisesi Vakfı</p>
               <span class="iban">TR21 0006 2000 1740 0006 2995 26</span>
             </div>
           </div>
