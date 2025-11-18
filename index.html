@@ -66,9 +66,9 @@
       margin-top: 0;
       align-items: flex-start;
     }
-  
+
     .column-logo { flex: 0 0 180px; min-width: 0; }
-    .column-contact { flex: 0 0 220px; min-width: 0; }
+    .column-contact { flex: 0 0 320px; min-width: 0; }
     .column-content { flex: 1; min-width: 0; }
     .column-logo {
       display: flex !important;
@@ -86,7 +86,10 @@
     }
     .column-contact h2 { margin-top: 0; }
     .info-box a { text-decoration: none; color: inherit; }
-  
+
+    .contact-extra h3 { margin: 10px 0 6px; }
+    .contact-extra p { margin: 0 0 12px; }
+
     .social-icons {
       display: flex;
       justify-content: center;
@@ -103,7 +106,7 @@
     .social-icons .fa-instagram { color: #E4405F; }
     .social-icons .fa-x-twitter { color: #000000; }
     .social-icons .fa-whatsapp { color: #25D366; }
-  
+
     /* BANNER */
     .hero-banner {
       position: relative;
@@ -122,40 +125,40 @@
     }
     .banner-overlay h1 { font-size: 36px; margin: 0 0 10px 0; font-weight: bold; }
     .banner-overlay p { font-size: 20px; margin: 0; font-style: italic; }
-  
+
     /* MOBİL DÜZEN - TEK VE GÜÇLÜ MEDIA QUERY */
     @media (max-width: 768px) {
       body { margin: 20px; }
-      .content-wrapper { 
-        flex-direction: column !important; 
+      .content-wrapper {
+        flex-direction: column !important;
         gap: 20px;
       }
       .column-logo {
         order: 2 !important;
         flex: 1 !important;
-        align-items: center !important;  /* Logo sütununu ortala */
+        align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
         padding-top: 0 !important;
         width: 100% !important;
       }
-      .column-content { 
-        order: 1 !important; 
+      .column-content {
+        order: 1 !important;
         flex: 1 !important;
         text-align: center;
       }
-      .column-contact { 
-        order: 3 !important; 
-        flex: 1 !important; 
-        display: flex !important; 
-        flex-direction: column !important; 
-        align-items: center !important; 
+      .column-contact {
+        order: 3 !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         padding: 0 !important;
         width: 100% !important;
       }
       .column-logo .logo {
         max-width: 150px !important;
-        margin: 0 auto !important;  /* Kesin ortalama - auto her iki tarafta */
+        margin: 0 auto !important;
         display: block !important;
         float: none !important;
       }
@@ -188,127 +191,133 @@
       <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
     </div>
   </div>
+
   <div class="container">
     <div class="content-wrapper">
+
+      <!-- LOGO SÜTUNU -->
       <div class="column-logo">
         <img class="logo" alt="MCL Logo" src="logo.png" />
       </div>
-     <div class="section">
-  <div class="container">
-    <h2 class="section-title">Mehmet Çelikel Lisesi Vakfı</h2>
 
-    <p>
-      Mehmet Çelikel Lisesi, her zaman şükran, minnet ve rahmetle anılan Mehmet ÇELİKEL tarafından
-      1938 yılında yaptırılarak, Cumhuriyetin ilk bağış okulu unvanıyla uzun yıllar Zonguldak ve
-      ilçelerinin tek lisesi olarak binlerce nitelikli gence yuva olmuştur.
-    </p>
+      <!-- ANA İÇERİK -->
+      <div class="column-content">
+        <div class="section">
+          <h2 class="section-title">Mehmet Çelikel Lisesi Vakfı</h2>
 
-    <p>
-      1988 yılında bir grup öğretmen ve öğrencinin bir araya gelerek, tarihi ile onur duydukları
-      okullarına karşı gösterdikleri vefa sonucu kurulan vakıf, mezunlarından aldığı güçle
-      Cumhuriyet ve Atatürk ilkelerine bağlı, çağdaş, akılcı, yenilikçi gençlerin yetişmesi için
-      projeler sunmakta; yeni, yaratıcı program ve yaklaşımlarla fark yaratan seçkin bir kurum
-      yaratma yönünde çalışmalar yapmaktadır.
-    </p>
+          <p>
+            Mehmet Çelikel Lisesi, her zaman şükran, minnet ve rahmetle anılan Mehmet ÇELİKEL tarafından
+            1938 yılında yaptırılarak, Cumhuriyetin ilk bağış okulu unvanıyla uzun yıllar Zonguldak ve
+            ilçelerinin tek lisesi olarak binlerce nitelikli gence yuva olmuştur.
+          </p>
 
-    <p>
-      M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü’nde öğrencilerini,
-      mezuniyetlerinin 30. ve 50. yıllarında bir araya getirerek birlik, beraberlik, aidiyet ve
-      sosyal dayanışmayı güçlendirmekte ve onları plaketle onurlandırmaktadır.
-    </p>
+          <p>
+            1988 yılında bir grup öğretmen ve öğrencinin bir araya gelerek, tarihi ile onur duydukları
+            okullarına karşı gösterdikleri vefa sonucu kurulan vakıf, mezunlarından aldığı güçle
+            Cumhuriyet ve Atatürk ilkelerine bağlı, çağdaş, akılcı, yenilikçi gençlerin yetişmesi için
+            projeler sunmakta; yeni, yaratıcı program ve yaklaşımlarla fark yaratan seçkin bir kurum
+            yaratma yönünde çalışmalar yapmaktadır.
+          </p>
 
-    <p>
-      Vakıf, Mehmet Çelikel Lisesi’nde eğitimin kalitesinin artırılması için okulun fiziki
-      yapısının iyileştirilmesi, bilimsel, sanatsal, kültürel ve sportif faaliyetlerin daha ileri
-      seviyelere taşınması amacıyla öğretmen ve öğrencilere çeşitli destekler sağlayarak projeler
-      geliştirmektedir.
-    </p>
+          <p>
+            M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü’nde öğrencilerini,
+            mezuniyetlerinin 30. ve 50. yıllarında bir araya getirerek birlik, beraberlik, aidiyet ve
+            sosyal dayanışmayı güçlendirmekte ve onları plaketle onurlandırmaktadır.
+          </p>
 
-    <p>
-      Mezun Çelikellilerin katkılarıyla lise ve üniversitede okuyan ihtiyaç sahibi öğrencilere burs
-      desteği sağlanmaktadır.
-    </p>
+          <p>
+            Vakıf, Mehmet Çelikel Lisesi’nde eğitimin kalitesinin artırılması için okulun fiziki
+            yapısının iyileştirilmesi, bilimsel, sanatsal, kültürel ve sportif faaliyetlerin daha ileri
+            seviyelere taşınması amacıyla öğretmen ve öğrencilere çeşitli destekler sağlayarak projeler
+            geliştirmektedir.
+          </p>
 
-    <p>
-      Mehmet Çelikel Lisesi Vakfı, tarihi, kurumsal kültürü ve gelenekleri güçlü; mezunlarıyla
-      ülkemizin çeşitli alanlarında etkili olan İstanbul, Ankara, İzmir, Zonguldak, Edirne ve
-      Erzurum’daki 17 tarihi devlet lisesi vakfının bir arada olduğu TEVDAK (Türk Eğitim Vakıfları
-      Dayanışma Konseyi) üyesi olarak yaratıcı çözümler, projeler ve eğitim modelleri üretmeye
-      devam etmektedir.
-    </p>
+          <p>
+            Mezun Çelikellilerin katkılarıyla lise ve üniversitede okuyan ihtiyaç sahibi öğrencilere burs
+            desteği sağlanmaktadır.
+          </p>
 
-    <h3>Misyon</h3>
-    <p>
-      Mezunlarından aldığı güçle Türkiye’nin hedeflerine katkı sağlayan, Cumhuriyet ve Atatürk
-      ilkelerine bağlı; çağdaş, akılcı ve yenilikçi gençlerin yetişmesini sağlamak için projeler
-      sunmak ve kaliteli eğitimin verilmesini desteklemektir.
-    </p>
+          <p>
+            Mehmet Çelikel Lisesi Vakfı, tarihi, kurumsal kültürü ve gelenekleri güçlü; mezunlarıyla
+            ülkemizin çeşitli alanlarında etkili olan İstanbul, Ankara, İzmir, Zonguldak, Edirne ve
+            Erzurum’daki 17 tarihi devlet lisesi vakfının bir arada olduğu TEVDAK (Türk Eğitim Vakıfları
+            Dayanışma Konseyi) üyesi olarak yaratıcı çözümler, projeler ve eğitim modelleri üretmeye
+            devam etmektedir.
+          </p>
 
-    <h3>Vizyon</h3>
-    <p>
-      Yeni, yaratıcı program ve yaklaşımlarla eğitimde kalite ve başarıları ile fark yaratan seçkin
-      bir kurum olmaktır.
-    </p>
+          <h3>Misyon</h3>
+          <p>
+            Mezunlarından aldığı güçle Türkiye’nin hedeflerine katkı sağlayan, Cumhuriyet ve Atatürk
+            ilkelerine bağlı; çağdaş, akılcı ve yenilikçi gençlerin yetişmesini sağlamak için projeler
+            sunmak ve kaliteli eğitimin verilmesini desteklemektir.
+          </p>
 
-    <hr>
+          <h3>Vizyon</h3>
+          <p>
+            Yeni, yaratıcı program ve yaklaşımlarla eğitimde kalite ve başarıları ile fark yaratan seçkin
+            bir kurum olmaktır.
+          </p>
 
-    <h2>Yönetim Kurulu</h2>
-    <ul>
-      <li>Erkal Ünal – Başkan</li>
-      <li>Mücella Pamay – Başkan Yardımcısı</li>
-      <li>Esra Hacıoğlu – Genel Sekreter</li>
-      <li>Ömer Gülay – Üye</li>
-      <li>Bahattin Zilan – Üye</li>
-      <li>Necati Demirci – Üye</li>
-      <li>Muammer Yazıcı – Üye</li>
-    </ul>
+          <hr>
 
-    <h2>Mütevelli Heyeti</h2>
-    <ul>
-      <li>Yüksel Aytaç – Başkan</li>
-      <li>Ali Osman Odabaşı – Başkan Yardımcısı</li>
-      <li>Hamdi Günvar – Başkan Yardımcısı</li>
-      <li>Erkal Ünal</li>
-      <li>Mücella Pamay</li>
-      <li>Esra Hacıoğlu</li>
-      <li>Ömer Gülay</li>
-      <li>Bahattin Zilan</li>
-      <li>Necati Demirci</li>
-      <li>Muammer Yazıcı</li>
-      <li>Şükür Kargıdan</li>
-      <li>Tekin Gürkan</li>
-      <li>Kamuran Kuşhan</li>
-      <li>Hüseyin Papila</li>
-      <li>Hakan Kaya</li>
-      <li>C. Ahmet Pamay</li>
-      <li>Ahmet Gül</li>
-      <li>Leyla Yavuz</li>
-      <li>Faruk Mercimek</li>
-      <li>Mustafa Yüce</li>
-      <li>Candan Tamtürk</li>
-      <li>Suat Kuzu</li>
-      <li>Saadet Gül</li>
-      <li>Tolga Aytaç</li>
-      <li>Gülüşan Alkılıç</li>
-      <li>H. Çağlar Gürol</li>
-      <li>Özlem Sarıkaya</li>
-      <li>Ali Osman Haberal</li>
-      <li>Şule Tahmaz</li>
-      <li>Venüs Kıranğ</li>
-      <li>İsmail Aşkar – Okul Müdürü (Doğal Üye)</li>
-      <li>Aycan Marangoz – Okul Aile Birliği Başkanı (Doğal Üye)</li>
-    </ul>
+          <h2>Yönetim Kurulu</h2>
+          <ul>
+            <li>Erkal Ünal – Başkan</li>
+            <li>Mücella Pamay – Başkan Yardımcısı</li>
+            <li>Esra Hacıoğlu – Genel Sekreter</li>
+            <li>Ömer Gülay – Üye</li>
+            <li>Bahattin Zilan – Üye</li>
+            <li>Necati Demirci – Üye</li>
+            <li>Muammer Yazıcı – Üye</li>
+          </ul>
 
-    <h2>Denetleme Kurulu</h2>
-    <ul>
-      <li>Şükür Kargıdan</li>
-      <li>Tekin Gürkan</li>
-      <li>Kamuran Kuşhan</li>
-    </ul>
-  </div>
-</div>
+          <h2>Mütevelli Heyeti</h2>
+          <ul>
+            <li>Yüksel Aytaç – Başkan</li>
+            <li>Ali Osman Odabaşı – Başkan Yardımcısı</li>
+            <li>Hamdi Günvar – Başkan Yardımcısı</li>
+            <li>Erkal Ünal</li>
+            <li>Mücella Pamay</li>
+            <li>Esra Hacıoğlu</li>
+            <li>Ömer Gülay</li>
+            <li>Bahattin Zilan</li>
+            <li>Necati Demirci</li>
+            <li>Muammer Yazıcı</li>
+            <li>Şükür Kargıdan</li>
+            <li>Tekin Gürkan</li>
+            <li>Kamuran Kuşhan</li>
+            <li>Hüseyin Papila</li>
+            <li>Hakan Kaya</li>
+            <li>C. Ahmet Pamay</li>
+            <li>Ahmet Gül</li>
+            <li>Leyla Yavuz</li>
+            <li>Faruk Mercimek</li>
+            <li>Mustafa Yüce</li>
+            <li>Candan Tamtürk</li>
+            <li>Suat Kuzu</li>
+            <li>Saadet Gül</li>
+            <li>Tolga Aytaç</li>
+            <li>Gülüşan Alkılıç</li>
+            <li>H. Çağlar Gürol</li>
+            <li>Özlem Sarıkaya</li>
+            <li>Ali Osman Haberal</li>
+            <li>Şule Tahmaz</li>
+            <li>Venüs Kıranğ</li>
+            <li>İsmail Aşkar – Okul Müdürü (Doğal Üye)</li>
+            <li>Aycan Marangoz – Okul Aile Birliği Başkanı (Doğal Üye)</li>
+          </ul>
 
-    
+          <h2>Denetleme Kurulu</h2>
+          <ul>
+            <li>Şükür Kargıdan</li>
+            <li>Tekin Gürkan</li>
+            <li>Kamuran Kuşhan</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- İLETİŞİM SÜTUNU -->
       <div class="column-contact">
         <div class="info-box">
           <h2>İletişim Bilgileri</h2>
@@ -317,30 +326,30 @@
             <p><strong>Web:</strong> <a href="https://mclvakfi.org.tr" target="_blank">https://mclvakfi.org.tr</a></p>
             <p><strong>Tel:</strong> <a href="tel:03722520052">0372 252 00 52</a> / <a href="tel:05304993444">0530 499 34 44</a></p>
             <p><strong>Fax:</strong> 0372 253 88 79</p>
-            <p><strong>E-Mail:</strong>
-              <script>
-                document.write('<a href="mailto:iletisim@mclvakfi.org.tr">iletisim@mclvakfi.org.tr</a>');
-              </script>
-            </p>
+            <p><strong>E-Mail:</strong> <a href="mailto:iletisim@mclvakfi.org.tr">iletisim@mclvakfi.org.tr</a></p>
+
+            <!-- BANKA HESAPLARI: e-posta satırının hemen altında -->
+            <div class="contact-extra">
+              <h3>Burs ve Bağış Hesabı</h3>
+              <p>
+                <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
+                <strong>T. İş Bankası Gazipaşa Şubesi</strong><br>
+                <strong>Hesap No:</strong> 7603 560209<br>
+                <strong>IBAN:</strong> TR93 0006 4000 0017 6030 5602 09
+              </p>
+
+              <h3>Pilav Günü ve Etkinliklere Katılım Hesabı</h3>
+              <p>
+                <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
+                <strong>Garanti Bankası</strong><br>
+                <strong>Hesap No:</strong> 174/6299526<br>
+                <strong>IBAN:</strong> TR21 0006 2000 1740 0006 2995 26
+              </p>
+            </div>
+            <!-- /contact-extra -->
+
           </div>
         </div>
-      <div class="contact-extra">
-    <h3>Burs ve Bağış Hesabı</h3>
-    <p>
-        <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
-        <strong>T. İş Bankası Gazipaşa Şubesi</strong><br>
-        <strong>Hesap No:</strong> 7603 560209<br>
-        <strong>IBAN:</strong> TR93 0006 4000 0017 6030 5602 09
-    </p>
-
-    <h3>Pilav Günü ve Etkinliklere Katılım Hesabı</h3>
-    <p>
-        <strong>Hesap Adı:</strong> Mehmet Çelikel Lisesi Vakfı<br>
-        <strong>Garanti Bankası</strong><br>
-        <strong>Hesap No:</strong> 174/6299526<br>
-        <strong>IBAN:</strong> TR21 0006 2000 1740 0006 2995 26
-    </p>
-</div>
 
         <div class="section social-icons">
           <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank" title="Facebook">
@@ -356,10 +365,9 @@
             <i class="fa-brands fa-whatsapp"></i>
           </a>
         </div>
+
       </div>
     </div>
   </div>
 </body>
 </html>
-
-
