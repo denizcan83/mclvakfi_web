@@ -131,34 +131,31 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER AYARLARI (ORANTILI ÖLÇEKLENDİRME) */
+    /* BANNER AYARLARI (GÜNCELLENDİ: TÜM RESMİ GÖSTER + ARKA PLAN RENGİ) */
     .hero-banner {
       position: relative;
       width: 100%;
-      /* BURASI GÜNCELLENDİ: Yükseklik biraz artırıldı */
-      height: 28vw; /* Ekran genişliğinin %28'i kadar yükseklik */
-      
-      /* Çok büyümesini ve küçülmesini engellemek için sınırlar GÜNCELLENDİ: */
-      max-height: 550px; /* Çok geniş ekranlarda aşırı büyümesin */
-      min-height: 200px; /* Çok dar ekranlarda (tablet gibi) fazla küçülmesin */
-      
+      height: 350px; /* Masaüstü için sabit yükseklik */
       margin-top: 70px; 
       margin-bottom: 30px;
-      background-color: #eee;
+      
+      /* YENİ: Boşlukları doldurmak için arka plan rengi */
+      background-color: var(--primary-color); /* Koyu mavi renk */
       overflow: hidden; 
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
-      object-fit: cover; 
-      /* GÜNCELLENDİ: Resmi biraz daha aşağı çekerek Atatürk ve okul dengesini kur */
-      object-position: center 40%; /* Yüzdeyi artırdık, resim biraz daha aşağı kayacak */
+      /* YENİ: Resmin tümünü göster, kesme yapma */
+      object-fit: contain; 
+      /* YENİ: Resmi ortala (hem dikey hem yatay) */
+      object-position: center; 
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3); 
+      background: rgba(0,0,0,0.3); /* Yazı okunması için karartma */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -311,12 +308,10 @@
       }
 
       /* Mobil Banner Ayarı */
-      .hero-banner { 
-          height: 160px; /* Mobil için sabit yükseklik */
-          min-height: auto; /* Mobil de min-height'ı sıfırla */
-      } 
+      .hero-banner { height: 160px; } 
       .banner-overlay h1 { font-size: 20px; }
-      .banner-image { object-position: center; } /* Mobilde tam ortala */
+      /* Mobil için de tüm resmi göstermek adına contain */
+      .banner-image { object-fit: contain; object-position: center; } 
 
       .content-wrapper { flex-direction: column; gap: 30px; }
       
