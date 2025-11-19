@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mehmet Çelikel Lisesi Vakfı Resmi Sitesi</title>
-  <meta name="description" content="Celikel Lisesi (Mehmet Çelikel Lisesi) Vakfı: Eğitim projeleri, mezun ağı, Zonguldak. 1938'den beri eğitimde fark yaratıyoruz.">
-  <meta name="keywords" content="celikel lisesi, mehmet çelikel lisesi, zonguldak lisesi, mcl vakfı, mezunlar, tev-dak, eğitim vakfı">
+  <meta name="description" content="Mehmet Çelikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak. 1938'den beri eğitimde fark yaratıyoruz.">
+  <meta name="keywords" content="celikel lisesi, mçl, mehmet çelikel lisesi, zonguldak lisesi, mcl vakfı, mezunlar, tev-dak, eğitim vakfı">
   
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <meta property="og:title" content="Mehmet Çelikel Lisesi Vakfı - Celikel Lisesi">
   <meta property="og:description" content="Celikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak.">
@@ -131,25 +131,29 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER */
+    /* BANNER AYARLARI (GÜNCELLENDİ) */
     .hero-banner {
       position: relative;
       width: 100%;
-      height: 280px; 
+      /* Masaüstü yüksekliği artırıldı (280px -> 400px) */
+      height: 400px; 
       margin-top: 70px; 
       margin-bottom: 30px;
       background-color: #eee;
+      overflow: hidden; /* Taşan kısımları gizle */
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
       object-fit: cover; 
+      /* ÖNEMLİ AYAR: Resmi her zaman üst tarafa (Atatürk'e) hizalar */
+      object-position: top center; 
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); 
+      background: rgba(0,0,0,0.4); /* Biraz daha şeffaf yapıldı */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -158,11 +162,11 @@
       box-sizing: border-box;
     }
     .banner-overlay h1 { 
-      font-size: 32px; 
+      font-size: 36px; /* Masaüstünde yazı biraz büyütüldü */
       color: white; 
       margin: 0; 
       font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
     }
 
     /* İÇERİK ALANI */
@@ -308,7 +312,8 @@
       }
 
       /* Diğer Mobil Ayarlar */
-      .hero-banner { height: 160px; }
+      /* Mobil yüksekliği senin beğendiğin şekilde sabit bırakıldı */
+      .hero-banner { height: 160px; } 
       .banner-overlay h1 { font-size: 20px; }
       
       .content-wrapper {
@@ -522,4 +527,3 @@
 
 </body>
 </html>
-
