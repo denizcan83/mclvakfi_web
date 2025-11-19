@@ -131,12 +131,21 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER AYARLARI (DENGELENMİŞ VERSİYON) */
+    /* BANNER AYARLARI (ORANTILI ÖLÇEKLENDİRME) */
     .hero-banner {
       position: relative;
       width: 100%;
-      /* Masaüstü yüksekliği 320px (İdeal Banner Boyutu) */
-      height: 320px; 
+      /* BURASI ÖNEMLİ: 
+         Piksel yerine 'vw' (Viewport Width) kullandık.
+         Ekran genişliğinin %24'ü kadar yükseklik verir.
+         Örn: 1920px ekranda ~460px, 1366px ekranda ~330px olur.
+         Bu sayede resim oranı her zaman korunur.
+      */
+      height: 24vw;
+      /* Çok büyümesini veya küçülmesini engellemek için sınırlar: */
+      max-height: 550px; 
+      min-height: 300px; 
+      
       margin-top: 70px; 
       margin-bottom: 30px;
       background-color: #eee;
@@ -145,16 +154,18 @@
     .banner-image {
       width: 100%; 
       height: 100%; 
-      /* Yanlardaki boşluklar gitsin, tam dolsun */
-      object-fit: cover; 
-      /* SİHİRLİ AYAR: %20. Üstteki boşluğu biraz kırp, aşağıya yer aç. */
-      object-position: center 20%; 
+      object-fit: cover; /* Kutuyu doldur */
+      /* 'top center' yerine 'center 30%' ayarı:
+         Bu ayar resmi ortalar ama hafifçe yukarıya (Atatürk'e) öncelik verir.
+         Hem Atatürk hem okul binası kadraja girer.
+      */
+      object-position: center 30%; 
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3); /* Yazı okunması için hafif karartma */
+      background: rgba(0,0,0,0.3); 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -280,15 +291,12 @@
     /* MOBİL UYUMLULUK (RESPONSIVE) */
     @media (max-width: 1000px) {
       .nav-brand { font-size: 16px; }
-      
-      /* Hamburger Menü Görünsün */
       .hamburger { display: block; }
       
-      /* Menü Linklerini Gizle (Default) */
       .nav-links {
-        display: none; /* Başlangıçta kapalı */
+        display: none; 
         position: absolute;
-        top: 70px; /* Navbar yüksekliği kadar aşağı */
+        top: 70px; 
         left: 0;
         width: 100%;
         background-color: white;
@@ -299,10 +307,7 @@
         border-top: 1px solid #eee;
       }
       
-      /* Menü Açıkken (JS ile eklenecek sınıf) */
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
       
       .nav-links a {
         padding: 15px 20px;
@@ -312,18 +317,12 @@
         display: block;
       }
 
-      /* Diğer Mobil Ayarlar */
-      /* Mobil yüksekliği 160px (Beğendiğin boyut) */
-      .hero-banner { height: 160px; } 
+      /* Mobil Banner Ayarı */
+      .hero-banner { height: 160px; min-height: auto; } 
       .banner-overlay h1 { font-size: 20px; }
-      
-      /* Mobilde resmi ortadan hizala ki her şey görünsün */
-      .banner-image { object-position: center; }
+      .banner-image { object-position: center; } /* Mobilde tam ortala */
 
-      .content-wrapper {
-        flex-direction: column;
-        gap: 30px;
-      }
+      .content-wrapper { flex-direction: column; gap: 30px; }
       
       .column-logo { 
         position: static; 
@@ -339,7 +338,6 @@
       .column-contact { width: 100%; flex: auto; }
       
       .iban { font-size: 11px; white-space: normal; word-break: break-all; }
-
       .list-box ul { grid-template-columns: 1fr; } 
       .bank-box { border-left-width: 6px; }
     }
