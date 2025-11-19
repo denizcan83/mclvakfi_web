@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <meta property="og:title" content="Mehmet Çelikel Lisesi Vakfı - Celikel Lisesi">
-  <meta property="og:description" content="Çelikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak.">
+  <meta property="og:description" content="Celikel Lisesi Vakfı: Eğitim projeleri, mezun ağı, Zonguldak.">
   <meta property="og:image" content="https://mclvakfi.org.tr/logo.png">
   <meta property="og:url" content="https://mclvakfi.org.tr">
   <meta property="og:type" content="website">
@@ -131,29 +131,31 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER AYARLARI (GÜNCELLENDİ) */
+    /* BANNER AYARLARI (TEKRAR GÜNCELLENDİ) */
     .hero-banner {
       position: relative;
       width: 100%;
-      /* Masaüstü yüksekliği artırıldı (280px -> 400px) */
-      height: 400px; 
+      /* Masaüstü yüksekliği 450px'e çıkarıldı */
+      height: 450px; 
       margin-top: 70px; 
       margin-bottom: 30px;
-      background-color: #eee;
-      overflow: hidden; /* Taşan kısımları gizle */
+      /* Boşluklar için okul binasının rengine yakın bir arka plan rengi */
+      background-color: #b59c7f; 
+      overflow: hidden; 
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
-      object-fit: cover; 
-      /* ÖNEMLİ AYAR: Resmi her zaman üst tarafa (Atatürk'e) hizalar */
-      object-position: top center; 
+      /* ÖNEMLİ DEĞİŞİKLİK: 'cover' yerine 'contain' kullanıldı */
+      object-fit: contain; 
+      /* Resmi kutunun ortasında gösterir, boşluklar arka plan rengiyle dolar */
+      object-position: center; 
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4); /* Biraz daha şeffaf yapıldı */
+      background: rgba(0,0,0,0.4); 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -162,7 +164,7 @@
       box-sizing: border-box;
     }
     .banner-overlay h1 { 
-      font-size: 36px; /* Masaüstünde yazı biraz büyütüldü */
+      font-size: 36px; 
       color: white; 
       margin: 0; 
       font-weight: 700;
@@ -527,4 +529,3 @@
 
 </body>
 </html>
-
