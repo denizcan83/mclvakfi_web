@@ -131,25 +131,21 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER AYARLARI (GÜNCELLENDİ: TÜM RESMİ GÖSTER + ARKA PLAN RENGİ) */
+    /* BANNER AYARLARI */
     .hero-banner {
       position: relative;
       width: 100%;
       height: 350px; /* Masaüstü için sabit yükseklik */
       margin-top: 70px; 
       margin-bottom: 30px;
-      
-      /* YENİ: Boşlukları doldurmak için arka plan rengi */
-      background-color: var(--primary-color); /* Koyu mavi renk */
+      background-color: var(--primary-color); /* Boşlukları doldurmak için arka plan rengi */
       overflow: hidden; 
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
-      /* YENİ: Resmin tümünü göster, kesme yapma */
-      object-fit: contain; 
-      /* YENİ: Resmi ortala (hem dikey hem yatay) */
-      object-position: center; 
+      object-fit: contain; /* Resmin tümünü göster, kesme yapma */
+      object-position: center; /* Resmi ortala */
       display: block;
     }
     .banner-overlay {
@@ -310,7 +306,6 @@
       /* Mobil Banner Ayarı */
       .hero-banner { height: 160px; } 
       .banner-overlay h1 { font-size: 20px; }
-      /* Mobil için de tüm resmi göstermek adına contain */
       .banner-image { object-fit: contain; object-position: center; } 
 
       .content-wrapper { flex-direction: column; gap: 30px; }
@@ -361,7 +356,7 @@
   </nav>
 
   <div class="hero-banner">
-    <img src="lise-resim.jpg" alt="Mehmet Çelikel Lisesi - Zonguldak" class="banner-image">
+    <img src="lise-resim2.jpg" alt="Mehmet Çelikel Lisesi - Zonguldak" class="banner-image">
     <div class="banner-overlay">
       <h1>Zonguldak Mehmet Çelikel Lisesi Vakfı</h1>
     </div>
