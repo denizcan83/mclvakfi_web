@@ -131,31 +131,30 @@
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
-    /* BANNER AYARLARI (TEKRAR GÜNCELLENDİ) */
+    /* BANNER AYARLARI (DENGELENMİŞ VERSİYON) */
     .hero-banner {
       position: relative;
       width: 100%;
-      /* Masaüstü yüksekliği 450px'e çıkarıldı */
-      height: 450px; 
+      /* Masaüstü yüksekliği 320px (İdeal Banner Boyutu) */
+      height: 320px; 
       margin-top: 70px; 
       margin-bottom: 30px;
-      /* Boşluklar için okul binasının rengine yakın bir arka plan rengi */
-      background-color: #b59c7f; 
+      background-color: #eee;
       overflow: hidden; 
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
-      /* ÖNEMLİ DEĞİŞİKLİK: 'cover' yerine 'contain' kullanıldı */
-      object-fit: contain; 
-      /* Resmi kutunun ortasında gösterir, boşluklar arka plan rengiyle dolar */
-      object-position: center; 
+      /* Yanlardaki boşluklar gitsin, tam dolsun */
+      object-fit: cover; 
+      /* SİHİRLİ AYAR: %20. Üstteki boşluğu biraz kırp, aşağıya yer aç. */
+      object-position: center 20%; 
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4); 
+      background: rgba(0,0,0,0.3); /* Yazı okunması için hafif karartma */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -164,11 +163,11 @@
       box-sizing: border-box;
     }
     .banner-overlay h1 { 
-      font-size: 36px; 
+      font-size: 34px; 
       color: white; 
       margin: 0; 
       font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 5px rgba(0,0,0,0.8);
     }
 
     /* İÇERİK ALANI */
@@ -314,10 +313,13 @@
       }
 
       /* Diğer Mobil Ayarlar */
-      /* Mobil yüksekliği senin beğendiğin şekilde sabit bırakıldı */
+      /* Mobil yüksekliği 160px (Beğendiğin boyut) */
       .hero-banner { height: 160px; } 
       .banner-overlay h1 { font-size: 20px; }
       
+      /* Mobilde resmi ortadan hizala ki her şey görünsün */
+      .banner-image { object-position: center; }
+
       .content-wrapper {
         flex-direction: column;
         gap: 30px;
