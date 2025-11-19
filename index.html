@@ -135,16 +135,12 @@
     .hero-banner {
       position: relative;
       width: 100%;
-      /* BURASI ÖNEMLİ: 
-         Piksel yerine 'vw' (Viewport Width) kullandık.
-         Ekran genişliğinin %24'ü kadar yükseklik verir.
-         Örn: 1920px ekranda ~460px, 1366px ekranda ~330px olur.
-         Bu sayede resim oranı her zaman korunur.
-      */
-      height: 24vw;
-      /* Çok büyümesini veya küçülmesini engellemek için sınırlar: */
-      max-height: 550px; 
-      min-height: 300px; 
+      /* BURASI GÜNCELLENDİ: Yükseklik biraz artırıldı */
+      height: 28vw; /* Ekran genişliğinin %28'i kadar yükseklik */
+      
+      /* Çok büyümesini ve küçülmesini engellemek için sınırlar GÜNCELLENDİ: */
+      max-height: 550px; /* Çok geniş ekranlarda aşırı büyümesin */
+      min-height: 200px; /* Çok dar ekranlarda (tablet gibi) fazla küçülmesin */
       
       margin-top: 70px; 
       margin-bottom: 30px;
@@ -154,12 +150,9 @@
     .banner-image {
       width: 100%; 
       height: 100%; 
-      object-fit: cover; /* Kutuyu doldur */
-      /* 'top center' yerine 'center 30%' ayarı:
-         Bu ayar resmi ortalar ama hafifçe yukarıya (Atatürk'e) öncelik verir.
-         Hem Atatürk hem okul binası kadraja girer.
-      */
-      object-position: center 30%; 
+      object-fit: cover; 
+      /* GÜNCELLENDİ: Resmi biraz daha aşağı çekerek Atatürk ve okul dengesini kur */
+      object-position: center 40%; /* Yüzdeyi artırdık, resim biraz daha aşağı kayacak */
       display: block;
     }
     .banner-overlay {
@@ -318,7 +311,10 @@
       }
 
       /* Mobil Banner Ayarı */
-      .hero-banner { height: 160px; min-height: auto; } 
+      .hero-banner { 
+          height: 160px; /* Mobil için sabit yükseklik */
+          min-height: auto; /* Mobil de min-height'ı sıfırla */
+      } 
       .banner-overlay h1 { font-size: 20px; }
       .banner-image { object-position: center; } /* Mobilde tam ortala */
 
