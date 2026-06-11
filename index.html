@@ -129,6 +129,24 @@
       color: var(--primary-color);
     }
 
+    /* Üyelik Formu İndir Butonu */
+    .download-btn {
+      display: block;
+      text-align: center;
+      background: var(--accent-color);
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 20px 0 10px;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #a93226;
+      color: white;
+    }
+
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
     
@@ -136,23 +154,23 @@
     .hero-banner {
       position: relative;
       width: 100%;
-      height: 350px; /* Masaüstü için sabit yükseklik */
+      height: 350px;
       margin-top: 70px; 
       margin-bottom: 30px;
-      background-color: var(--primary-color); /* Boşlukları doldurmak için arka plan rengi */
+      background-color: var(--primary-color);
       overflow: hidden; 
     }
     .banner-image {
       width: 100%; 
       height: 100%; 
-      object-fit: contain; /* Resmin tümünü göster, kesme yapma */
-      object-position: center; /* Resmi ortala */
+      object-fit: contain;
+      object-position: center;
       display: block;
     }
     .banner-overlay {
       position: absolute; 
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.3); /* Yazı okunması için karartma */
+      background: rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -282,11 +300,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7); /* Karartma */
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 9999; /* En üst katman */
+      z-index: 9999;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
@@ -309,7 +327,7 @@
 
     .modal-content img {
       max-width: 100%;
-      max-height: 85vh; /* Ekrana sığacak şekilde */
+      max-height: 85vh;
       display: block;
       border-radius: 8px;
       border: 2px solid #fff;
@@ -411,6 +429,7 @@
       <img src="duyuru.png" alt="Mehmet Çelikel Lisesi Vakfı Pilav Günü Duyurusu">
     </div>
   </div>
+
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="nav-brand">MÇL VAKFI</a>
@@ -423,6 +442,7 @@
         <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda</a>
         <a href="#yonetim" onclick="toggleMenu()">Yönetim</a>
         <a href="#iletisim" onclick="toggleMenu()">İletişim & Bağış</a>
+        <a href="vakif_uye_formu.pdf" download onclick="toggleMenu()">Üye Ol</a>
       </div>
     </div>
   </nav>
@@ -457,7 +477,7 @@
               çağdaş, akılcı, yenilikçi gençlerin yetişmesi için projeler sunmaktadır.
             </p>
             <p>
-              M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü’nde öğrencilerini
+              M. Çelikel Lisesi Vakfı, her yıl geleneksel olarak düzenlediği Pilav Günü'nde öğrencilerini
               bir araya getirerek birlik, beraberlik, aidiyet ve sosyal dayanışmayı güçlendirmektedir.
             </p>
             <p>
@@ -565,6 +585,10 @@
             </div>
           </div>
 
+          <a href="vakif_uye_formu.pdf" download class="download-btn">
+            <i class="fa-solid fa-file-arrow-down"></i> Üyelik Formu İndir
+          </a>
+
           <div class="social-icons">
             <a href="https://www.facebook.com/share/1AMUmYjMjc/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/celikellisesivakfi?igsh=aWUzc3gwMnIxbmU2" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -584,9 +608,9 @@
       links.classList.toggle("active");
     }
 
-    // --- MODAL İŞLEMLERİ (YENİ) ---
+    // --- MODAL İŞLEMLERİ ---
     window.addEventListener('load', function() {
-      openModal(); // Sayfa yüklendiğinde modalı aç
+      openModal();
     });
 
     function openModal() {
@@ -597,7 +621,6 @@
       document.getElementById('duyuruModal').classList.remove('active');
     }
 
-    // Modalın dışındaki siyah alana tıklayınca kapatma
     document.getElementById('duyuruModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closeModal();
