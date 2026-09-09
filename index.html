@@ -6,7 +6,7 @@
   <title>Mehmet Çelikel Lisesi Vakfı Resmi Sitesi</title>
   <meta name="description" content="Celikel Lisesi (Mehmet Çelikel Lisesi) Vakfı: Eğitim projeleri, mezun ağı, Zonguldak. 1938'den beri eğitimde fark yaratıyoruz.">
   <meta name="keywords" content="celikel lisesi, mehmet çelikel lisesi, zonguldak lisesi, mcl vakfı, mezunlar, tev-dak, eğitim vakfı">
-  
+
   <link rel="icon" type="image/png" sizes="192x192" href="apple-touch-icon.png">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
@@ -23,6 +23,8 @@
   <meta name="twitter:description" content="Celikel Lisesi resmi vakfı">
   <meta name="twitter:image" content="https://mclvakfi.org.tr/logo.png">
 
+  <!-- GEÇİCİ ADRES: Gazipaşa Cad. 32/1 binası yıkıldı, yeniden inşa ediliyor.
+       İnşaat bitince streetAddress tekrar eski adresle güncellenecek. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,20 +33,32 @@
     "alternateName": "Celikel Lisesi Vakfı",
     "url": "https://mclvakfi.org.tr",
     "logo": "https://mclvakfi.org.tr/logo.png",
-    "description": "Zonguldak Mehmet Çelikel Lisesi Vakfi. Eğitim projeleri, mezun ağı ve TEVDAK üyesi.",
+    "description": "Zonguldak Mehmet Çelikel Lisesi Vakfı. Eğitim projeleri, mezun ağı ve TEVDAK üyesi.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Meşrutiyet Mah. Gazipaşa Cad. 32/1",
+      "streetAddress": "Meşrutiyet Mah. Tahir Karaoğuz Sok. Demirci Çarşısı Bina No:21 Kat:3 No:313",
       "addressLocality": "Zonguldak",
       "postalCode": "67100",
       "addressCountry": "TR"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+90-372-253-8879",
-      "contactType": "customer service",
-      "email": "iletisim@mclvakfi.org.tr"
-    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-372-253-8879",
+        "contactType": "customer service",
+        "email": "iletisim@mclvakfi.org.tr",
+        "areaServed": "TR",
+        "availableLanguage": "Turkish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90-530-499-3444",
+        "contactType": "customer service",
+        "email": "iletisim@mclvakfi.org.tr",
+        "areaServed": "TR",
+        "availableLanguage": "Turkish"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/share/1AMUmYjMjc/",
       "https://www.instagram.com/celikellisesivakfi",
@@ -59,20 +73,20 @@
   <style>
     /* GENEL AYARLAR */
     :root {
-      --primary-color: #2c3e50; 
-      --accent-color: #c0392b; 
+      --primary-color: #2c3e50;
+      --accent-color: #c0392b;
       --bg-light: #f8f9fa;
       --text-dark: #333;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px; 
+      scroll-padding-top: 80px;
     }
 
-    body { 
-      font-family: 'Open Sans', sans-serif; 
-      line-height: 1.7; 
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
       margin: 0;
       color: var(--text-dark);
       background-color: #fff;
@@ -105,7 +119,7 @@
       font-size: 18px;
       color: var(--primary-color);
     }
-    
+
     /* Masaüstü Linkleri */
     .nav-links {
       display: flex;
@@ -149,26 +163,26 @@
 
     /* DÜZEN (LAYOUT) */
     .container { max-width: 1150px; margin: auto; padding: 0 20px; }
-    
+
     /* BANNER AYARLARI */
     .hero-banner {
       position: relative;
       width: 100%;
       height: 350px;
-      margin-top: 70px; 
+      margin-top: 70px;
       margin-bottom: 30px;
       background-color: var(--primary-color);
-      overflow: hidden; 
+      overflow: hidden;
     }
     .banner-image {
-      width: 100%; 
-      height: 100%; 
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       object-position: center;
       display: block;
     }
     .banner-overlay {
-      position: absolute; 
+      position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.3);
       display: flex;
@@ -178,10 +192,10 @@
       padding: 20px;
       box-sizing: border-box;
     }
-    .banner-overlay h1 { 
-      font-size: 34px; 
-      color: white; 
-      margin: 0; 
+    .banner-overlay h1 {
+      font-size: 34px;
+      color: white;
+      margin: 0;
       font-weight: 700;
       text-shadow: 0 2px 5px rgba(0,0,0,0.8);
     }
@@ -195,38 +209,38 @@
     }
 
     /* SOL SÜTUN (LOGO) */
-    .column-logo { 
-      flex: 0 0 180px; 
+    .column-logo {
+      flex: 0 0 180px;
       text-align: center;
-      position: sticky; 
+      position: sticky;
       top: 100px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .column-logo .logo { 
-      width: 100%; 
-      max-width: 160px; 
-      height: auto; 
+    .column-logo .logo {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
       margin: 0 auto;
     }
 
     /* ORTA SÜTUN (METİN) */
     .column-content { flex: 1; }
-    .section-title { 
-      color: var(--primary-color); 
-      border-bottom: 2px solid #eee; 
+    .section-title {
+      color: var(--primary-color);
+      border-bottom: 2px solid #eee;
       padding-bottom: 10px;
       margin-top: 0;
     }
     .text-justify { text-align: justify; }
-    
+
     /* LİSTELER */
     .list-box ul {
       list-style: none;
       padding: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
     .list-box li {
@@ -239,8 +253,8 @@
     .list-box li:hover { border-left-color: var(--primary-color); }
 
     /* SAĞ SÜTUN (İLETİŞİM) */
-    .column-contact { 
-        flex: 0 0 350px; 
+    .column-contact {
+        flex: 0 0 350px;
     }
     .contact-card {
       background: white;
@@ -252,7 +266,7 @@
     .contact-card h2 { font-size: 20px; color: var(--primary-color); margin-top: 0; }
     .contact-item { margin-bottom: 12px; font-size: 14px; }
     .contact-item strong { display: block; color: #555; }
-    
+
     /* BANKA HESAPLARI */
     .bank-box {
       background-color: #f0f4f8;
@@ -351,7 +365,7 @@
       justify-content: center;
       z-index: 10000;
     }
-    
+
     .close-modal-btn:hover {
       background: #a93226;
     }
@@ -360,11 +374,11 @@
     @media (max-width: 1000px) {
       .nav-brand { font-size: 16px; }
       .hamburger { display: block; }
-      
+
       .nav-links {
-        display: none; 
+        display: none;
         position: absolute;
-        top: 70px; 
+        top: 70px;
         left: 0;
         width: 100%;
         background-color: white;
@@ -374,9 +388,9 @@
         gap: 0;
         border-top: 1px solid #eee;
       }
-      
+
       .nav-links.active { display: flex; }
-      
+
       .nav-links a {
         padding: 15px 20px;
         border-bottom: 1px solid #f5f5f5;
@@ -386,27 +400,27 @@
       }
 
       /* Mobil Banner Ayarı */
-      .hero-banner { height: 160px; } 
+      .hero-banner { height: 160px; }
       .banner-overlay h1 { font-size: 20px; }
-      .banner-image { object-fit: contain; object-position: center; } 
+      .banner-image { object-fit: contain; object-position: center; }
 
       .content-wrapper { flex-direction: column; gap: 30px; }
-      
-      .column-logo { 
-        position: static; 
-        width: 100%; 
+
+      .column-logo {
+        position: static;
+        width: 100%;
         margin-bottom: 10px;
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: center;
         align-items: center;
       }
       .column-logo .logo { max-width: 120px; }
-      
+
       .column-content { width: 100%; }
       .column-contact { width: 100%; flex: auto; }
-      
+
       .iban { font-size: 11px; white-space: normal; word-break: break-all; }
-      .list-box ul { grid-template-columns: 1fr; } 
+      .list-box ul { grid-template-columns: 1fr; }
       .bank-box { border-left-width: 6px; }
     }
   </style>
@@ -433,7 +447,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="nav-brand">MÇL VAKFI</a>
-      
+
       <div class="hamburger" onclick="toggleMenu()">
         <i class="fa-solid fa-bars"></i>
       </div>
@@ -463,7 +477,7 @@
       </div>
 
       <div class="column-content">
-        
+
         <div class="section" id="hakkimizda">
           <h2 class="section-title">Vakfımız Hakkında</h2>
           <div class="text-justify">
@@ -473,7 +487,7 @@
               ilçelerinin tek lisesi olarak binlerce nitelikli gence yuva olmuştur.
             </p>
             <p>
-              1988 yılında kurulan vakıf, mezunlarından aldığı güçle Cumhuriyet ve Atatürk ilkelerine bağlı, 
+              1988 yılında kurulan vakıf, mezunlarından aldığı güçle Cumhuriyet ve Atatürk ilkelerine bağlı,
               çağdaş, akılcı, yenilikçi gençlerin yetişmesi için projeler sunmaktadır.
             </p>
             <p>
@@ -481,7 +495,7 @@
               bir araya getirerek birlik, beraberlik, aidiyet ve sosyal dayanışmayı güçlendirmektedir.
             </p>
             <p>
-               TEVDAK (Türk Eğitim Vakıfları Dayanışma Konseyi) üyesi olarak yaratıcı çözümler, 
+               TEVDAK (Türk Eğitim Vakıfları Dayanışma Konseyi) üyesi olarak yaratıcı çözümler,
                projeler ve eğitim modelleri üretmeye devam etmektedir.
             </p>
           </div>
