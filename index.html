@@ -308,6 +308,8 @@
     .social-icons a:hover i { color: white; }
 
     /* --- DUYURU MODAL (POPUP) STİLLERİ --- */
+    /* Popup şu an KAPALI (body içindeki blok yorum satırına alındı).
+       Stiller duruyor; yeni duyuruda tekrar açmak için dokunmaya gerek yok. */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -435,14 +437,24 @@
 </head>
 <body>
 
+  <!-- ===== DUYURU POPUP - 18.11.2026 itibariyle KAPALI =====
+       Yeni duyuru olduğunda yapılacaklar:
+       1) Yeni gorseli duyuru.png adiyla repoya yukle (eskisinin uzerine).
+       2) Asagidaki blogu yorumdan cikar: bu satirin ustundeki ve blogun
+          altindaki yorum isaretlerini sil.
+       3) Cloudflare onbellegini temizle (Caching - Purge Cache - duyuru.png).
+       Not: JS tarafi otomatik calisir, orada degisiklik gerekmiyor.
+
   <div class="modal-overlay" id="duyuruModal">
     <div class="modal-content">
       <button class="close-modal-btn" onclick="closeModal()">
         <i class="fa-solid fa-times"></i>
       </button>
-      <img src="duyuru.png" alt="Mehmet Çelikel Lisesi Vakfı Pilav Günü Duyurusu">
+      <img src="duyuru.png" alt="Mehmet Çelikel Lisesi Vakfı Duyurusu">
     </div>
   </div>
+
+  ===== DUYURU POPUP SONU ===== -->
 
   <nav class="navbar">
     <div class="nav-container">
@@ -622,24 +634,28 @@
       links.classList.toggle("active");
     }
 
-    // --- MODAL İŞLEMLERİ ---
-    window.addEventListener('load', function() {
-      openModal();
-    });
+    // --- DUYURU POPUP İŞLEMLERİ ---
+    // Popup bloğu body içinde yorumdayken bu kod sessizce devre dışı kalır;
+    // blok yorumdan çıkarıldığı anda popup yeniden çalışır.
+    var duyuruModal = document.getElementById('duyuruModal');
 
     function openModal() {
-      document.getElementById('duyuruModal').classList.add('active');
+      if (duyuruModal) duyuruModal.classList.add('active');
     }
 
     function closeModal() {
-      document.getElementById('duyuruModal').classList.remove('active');
+      if (duyuruModal) duyuruModal.classList.remove('active');
     }
 
-    document.getElementById('duyuruModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
+    if (duyuruModal) {
+      window.addEventListener('load', openModal);
+
+      duyuruModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+    }
   </script>
 
 </body>
